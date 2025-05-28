@@ -54,7 +54,7 @@ source install/setup.bash
 ros2 run hello_moveit hello_moveit
 ```
 
-##Nodo yolo_moveit
+## Nodo yolo_moveit
 
 ```bash
 ros2 run yolo_moveit yolo_moveit
