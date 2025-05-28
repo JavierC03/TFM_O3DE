@@ -59,7 +59,7 @@ private:
         target_pose.position.z = z;
 
         tf2::Quaternion q;
-        q.setRPY(M_PI, 0, 0);  // orientación hacia abajo
+        q.setRPY(M_PI, 0, M_PI/4);  // orientación hacia abajo
         target_pose.orientation = tf2::toMsg(q);
 
         geometry_msgs::msg::Pose above_pose = target_pose;
