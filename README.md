@@ -44,7 +44,7 @@ Clona el repositorio dentro de tu workspace ROS 2 y compila con colcon:
 ```bash
 colcon build --packages-select hello_moveit yolo_moveit
 source install/setup.bash
-
+```
 
 ## Cómo ejecutar
 
