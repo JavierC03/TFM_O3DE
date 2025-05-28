@@ -81,9 +81,9 @@ private:
         gripper_group->setJointValueTarget(open_gripper_joints);
         gripper_group->setMaxVelocityScalingFactor(0.5);
         if (gripper_group->move()) {
-            RCLCPP_INFO(this->get_logger(), "Gripper opened successfully.");
+            RCLCPP_INFO(this->get_logger(), "Pinza abierta correctamente.");
         } else {
-            RCLCPP_ERROR(this->get_logger(), "Error opening gripper.");
+            RCLCPP_ERROR(this->get_logger(), "Error al abrir la pinza.");
         }
     }
 
@@ -141,7 +141,7 @@ private:
             if (detection.class_name == target_class_) {
                 target_x = detection.bbox3d.center.position.x;
                 target_y = detection.bbox3d.center.position.y;
-                target_z = detection.bbox3d.center.position.z;
+                target_z = detection.bbox3d.center.position.z + 0.1;
 
                 open_gripper();
                 auto pose_after_approach = approach_target(target_x, target_y, target_z);
