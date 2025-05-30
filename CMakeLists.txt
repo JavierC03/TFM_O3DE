@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(hello_moveit)
+project(manipulation_o3de)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -14,9 +14,9 @@ find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(yolo_msgs REQUIRED)
 
-# Ejecutable hello_moveit
-add_executable(hello_moveit src/hello_moveit.cpp)
-ament_target_dependencies(hello_moveit
+# Ejecutable test_moveit
+add_executable(test_moveit src/test_moveit.cpp)
+ament_target_dependencies(test_moveit
   rclcpp
   moveit_ros_planning_interface
   tf2
@@ -25,8 +25,8 @@ ament_target_dependencies(hello_moveit
   geometry_msgs
   moveit_core
 )
-target_compile_features(hello_moveit PUBLIC cxx_std_17)
-install(TARGETS hello_moveit DESTINATION lib/${PROJECT_NAME})
+target_compile_features(test_moveit PUBLIC cxx_std_17)
+install(TARGETS test_moveit DESTINATION lib/${PROJECT_NAME})
 
 # Ejecutable yolo_moveit
 add_executable(yolo_moveit src/yolo_moveit.cpp)
